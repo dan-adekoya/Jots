@@ -1,7 +1,9 @@
 <template>
   <div id="app">
     <Nav></Nav>
-    <router-view></router-view>
+    <div class="router-view">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
@@ -22,5 +24,14 @@ export default {
     --secondary2: rgb(96, 127, 236, 0.36);
     --white: #FFFFFF;
     --black: #000000;
+}
+#app{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.router-view{
+  padding: 20px;
+  width: 100%;
 }
 </style>
