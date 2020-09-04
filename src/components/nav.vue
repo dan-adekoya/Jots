@@ -4,7 +4,7 @@
             <img class="logo" src="../assets/images/logobeta.svg" alt="">
         </div>
         <ul v-bind:class="{open: open}">
-                <li><router-link class="links is-active" to="/"><img src="../assets/images/home.svg" alt="" srcset=""> <p>Jots</p> </router-link></li>
+                <li><router-link class="links" to="/"><img src="../assets/images/home.svg" alt="" srcset=""> <p>Jots</p> </router-link></li>
                 <li><router-link class="links" to="/manage"><img src="../assets/images/manage.svg" alt="" srcset=""><p>Manage</p> </router-link></li>
                 <li><router-link class="links" to="/dev"><img src="../assets/images/dev.svg" alt="" srcset=""><p>Developer</p></router-link></li>
          </ul>       
@@ -20,8 +20,11 @@
 export default {
 data() {
     return {
-        open: false
+        open: false,
     }
+},
+methods: {
+        
 },
 }
 </script>
@@ -36,9 +39,9 @@ data() {
     align-items: center;
     justify-content: space-between;
     padding: 30px 0px;
+    transition: all 300ms
 }
-.logo{
-}
+
 ul{
     list-style: none;
     width: 100%;
@@ -55,8 +58,9 @@ ul li .links{
     color: var(--white);
     text-decoration: none;
 }
-.links.is-active{
+.links.router-link-exact-active{
     background: #3A4774;
+    transition: all 600ms
 }
 li .links p{
     margin-left: 20px;
@@ -68,12 +72,21 @@ li .links p{
 }
 @media screen and (max-width: 900px) {
   .nav{
-    transform: translateX(-95%);
+    transform: translateX(-100%);
     background: var(--secondary2);
     position: absolute;
     top: 0;
     left: 0;
   }
+  .nav::after{
+    content: '>>';
+    color: white;
+    position: absolute;
+    right: -18px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    top: 50%
+   }
   .nav.open{
       transform: translateX(0%);
       background: var(--secondary)
