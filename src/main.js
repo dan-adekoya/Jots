@@ -2,12 +2,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
-
+//routed components
 import Jots from './components/Jots.vue'
 import Manage from './components/Manage.vue'
 import Dev from './components/Developer.vue'
 
 
+//global components
+import nav from './components/nav.vue'
+Vue.component('Nav', nav)
 
 
 

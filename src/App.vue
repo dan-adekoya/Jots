@@ -1,28 +1,26 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <Nav></Nav>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: 'App',
+  data() {
+    return {
+      
+    }
+  },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-.router-link{
-  margin: 10px;
-  color: #42b983;
+:root{
+    --primary: #3A4774;
+    --secondary: #607FEC;
+    --secondary2: rgb(96, 127, 236, 0.36);
+    --white: #FFFFFF;
+    --black: #000000;
 }
 </style>

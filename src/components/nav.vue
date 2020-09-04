@@ -1,5 +1,5 @@
 <template>
-    <div class="dev">
+    <div class="nav">
         
     </div>
 </template>
@@ -14,6 +14,10 @@ data() {
 }
 </script>
 
-<style>
-
+<style scoped>
+.nav{
+    width: 300px;
+    height: 100vh;
+    background: var(--secondary2);
+}
 </style>

@@ -1,9 +1,6 @@
 <template>
-    <div>
-        <h1>Manage</h1>
-        <router-link class="router-link" to="/">Jots</router-link>
-        <router-link class="router-link" to="/manage">Manage</router-link>
-        <router-link class="router-link" to="/dev">Dev</router-link>
+    <div class="manage">
+        
     </div>
 </template>
 
