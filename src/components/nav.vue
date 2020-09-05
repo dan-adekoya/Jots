@@ -9,9 +9,9 @@
                 <li><router-link class="links" to="/dev"><img src="../assets/images/dev.svg" alt="" srcset=""><p>Developer</p></router-link></li>
          </ul>       
          <div class="socials">
-             <img src="../assets/images/twitter.svg" alt="">
-             <img src="../assets/images/instagram.svg" alt="">
-             <img src="../assets/images/linkedin.svg" alt="">
+             <a href="https://twitter.com/DanielAdekoya11" target="_blank"><img src="../assets/images/twitter.svg" alt=""></a>
+             <a href="https://www.instagram.com/danieladekoya_/" target="_blank"><img src="../assets/images/instagram.svg" alt=""></a>
+             <a href="https://www.linkedin.com/in/daniel-adekoya-010810192/" target="_blank"><img src="../assets/images/linkedin.svg" alt=""></a>
          </div>
     </div>
 </template>
