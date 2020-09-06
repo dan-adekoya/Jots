@@ -1,18 +1,24 @@
 <template>
-    <div class="nav" v-bind:class="{open: open}" @click="open =! open">
-        <div class="logos">
-            <img class="logo" src="../assets/images/logobeta.svg" alt="">
+    <div>
+        <div class="nav" v-bind:class="{open: open}" @click="open =! open">
+            <div class="logos">
+                <img class="logo" src="../assets/images/logobeta.svg" alt="">
+            </div>
+            <ul v-bind:class="{open: open}">
+                    <li><router-link class="links" to="/"><img src="../assets/images/home.svg" alt="" srcset=""> <p>Jots</p> </router-link></li>
+                    <li><router-link class="links" to="/manage"><img src="../assets/images/manage.svg" alt="" srcset=""><p>Manage</p> </router-link></li>
+                    <li><router-link class="links" to="/dev"><img src="../assets/images/dev.svg" alt="" srcset=""><p>Developer</p></router-link></li>
+            </ul>       
+            <div class="socials">
+                <a href="https://twitter.com/DanielAdekoya11" target="_blank"><img src="../assets/images/twitter.svg" alt=""></a>
+                <a href="https://www.instagram.com/danieladekoya_/" target="_blank"><img src="../assets/images/instagram.svg" alt=""></a>
+                <a href="https://www.linkedin.com/in/daniel-adekoya-010810192/" target="_blank"><img src="../assets/images/linkedin.svg" alt=""></a>
+            </div>
         </div>
-        <ul v-bind:class="{open: open}">
-                <li><router-link class="links" to="/"><img src="../assets/images/home.svg" alt="" srcset=""> <p>Jots</p> </router-link></li>
-                <li><router-link class="links" to="/manage"><img src="../assets/images/manage.svg" alt="" srcset=""><p>Manage</p> </router-link></li>
-                <li><router-link class="links" to="/dev"><img src="../assets/images/dev.svg" alt="" srcset=""><p>Developer</p></router-link></li>
-         </ul>       
-         <div class="socials">
-             <a href="https://twitter.com/DanielAdekoya11" target="_blank"><img src="../assets/images/twitter.svg" alt=""></a>
-             <a href="https://www.instagram.com/danieladekoya_/" target="_blank"><img src="../assets/images/instagram.svg" alt=""></a>
-             <a href="https://www.linkedin.com/in/daniel-adekoya-010810192/" target="_blank"><img src="../assets/images/linkedin.svg" alt=""></a>
-         </div>
+
+        <div class="space">
+
+        </div>
     </div>
 </template>
 
@@ -37,11 +43,16 @@ methods: {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 30px 0px;
-    transition: all 300ms
+    top: 0;
+    left: 0;
+    position: fixed;
+    justify-content: space-around;
+    transition: all 300ms;
 }
-
+.space{
+    width: 300px;
+    height: 10px;
+}
 ul{
     list-style: none;
     width: 100%;
@@ -76,6 +87,7 @@ li .links p{
     background: var(--secondary2);
     position: fixed;
     top: 0;
+    width: 250px;
     left: 0;
   }
   .nav::after{
@@ -101,5 +113,10 @@ li .links p{
   ul.open{
       pointer-events: all;
   }
+  .space{
+    width: 0px;
+    height: 10px;
+    transition: all 300ms
+    }
 }
 </style>

@@ -7,3 +7,9 @@
 body{
     background: #3A4774;
 }
+::-webkit-scrollbar{
+    width: 10px;
+  }
+::-webkit-scrollbar-thumb{
+    background: var(--secondary)
+}
