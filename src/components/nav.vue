@@ -74,16 +74,20 @@ li .links p{
   .nav{
     transform: translateX(-100%);
     background: var(--secondary2);
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
   }
   .nav::after{
-    content: '>>';
+    content: '';
     color: white;
     position: absolute;
-    right: -18px;
+    background: url(../assets/images/right.svg);
+    right: -32px;
+    width: 40px;
+    height: 40px;
     transform: translateY(-50%);
+    background-size: cover; 
     cursor: pointer;
     top: 50%
    }
