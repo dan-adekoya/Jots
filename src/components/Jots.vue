@@ -148,6 +148,7 @@ form textarea{
   margin-top: 40px;
   background: #3A4774;
   padding: 10px;
+  cursor: auto;
 }
 .preview p::-webkit-scrollbar{
   width: 6px;
@@ -164,7 +165,8 @@ form textarea{
   position: absolute;
   transition: all 300ms;
   top: 8%;
-  left: 80%;
+  right: 0%;
+  pointer-events: none;
   font-weight: 100;
 }
 .awr.warn{

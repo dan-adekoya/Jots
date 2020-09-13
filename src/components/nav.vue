@@ -49,6 +49,7 @@ methods: {
     position: fixed;
     justify-content: space-around;
     transition: all 300ms;
+    z-index: 1;
 }
 .space{
     width: 300px;
