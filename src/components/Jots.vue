@@ -115,6 +115,7 @@ form textarea{
   opacity: 0;
   transition: all 300ms;
   background: rgba(0, 0, 0, 0.616);
+  z-index: 2;
 }
 .preview.open{
   visibility: visible;
