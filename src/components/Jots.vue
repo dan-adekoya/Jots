@@ -1,19 +1,21 @@
 <template>
-  <div class="jots">
+  <div class="jots" >
     <form>
-      <input type="text" placeholder="Title :">
-      <textarea name="" id="" cols="30" rows="10"></textarea>
+          <input type="text" ref="input" v-model="title" placeholder="Title :">
+          <textarea ref="input" value="" v-model="note" cols="30" rows="10"></textarea>
       <div class="btn">
         <button class="mainBtn">Save</button>
         <button class="mainBtn">Clear</button>
-        <p disabled="disabled" class="Btn" @click="open =! open">Preview Note</p>
+        <p class="Btn" @click="disallow">Preview Note</p>
       </div>
     </form>
+    <h4 v-bind:class="{warn: warn}" class="awr">Input the fields</h4>
+
     <div class="preview" v-bind:class="{open: open}">
       <img src="../assets/images/close.svg" alt="" class="close" @click="open =! open">
         <h1>Preview</h1>
-        <h2>Title</h2>
-        <p></p>
+        <h2>{{title}}</h2>
+        <p>{{note}}</p>
     </div>
   </div>
 </template>
@@ -22,7 +24,21 @@
 export default {
   data() {
     return {
+      title: '',
+      note: '',
+      warn: false,
       open: false
+    }
+  },
+  methods: {
+    disallow(){
+      if(this.$refs.input.value == ''){
+        this.open = false
+        this.warn = true
+      }else{
+        this.open = true
+        this.warn = false
+      }
     }
   },
 }
@@ -96,10 +112,13 @@ form textarea{
   color: var(--white);
   width: 100%;
   height: 100vh;
+  opacity: 0;
+  transition: all 300ms;
   background: rgba(0, 0, 0, 0.616);
 }
 .preview.open{
   visibility: visible;
+  opacity: 1;
 }
 .close{
   position: absolute;
@@ -136,6 +155,21 @@ form textarea{
 .preview p::-webkit-scrollbar-thumb{
   background: var(--secondary)
 }
+.awr{
+  opacity: 0;
+  color: var(--white);
+  background: rgb(255, 145, 145);
+  padding: 10px;
+  width: 200px;
+  position: absolute;
+  transition: all 300ms;
+  top: 8%;
+  left: 80%;
+  font-weight: 100;
+}
+.awr.warn{
+  opacity: 1;
+}
 @media screen and (max-width: 900px) {
  .btn button, p{
    margin: 0 0%;
@@ -143,4 +177,5 @@ form textarea{
    font-size: 15px;
  } 
 }
+
 </style>

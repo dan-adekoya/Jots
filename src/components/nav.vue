@@ -24,13 +24,14 @@
 
 <script>
 export default {
+ 
 data() {
     return {
         open: false,
     }
 },
 methods: {
-        
+      
 },
 }
 </script>
