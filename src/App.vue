@@ -46,13 +46,16 @@ export default {
 }
 .note{
   position: fixed;
-  width: 350px;
+  width: 550px;
   padding: 10px;
-  background: black;
+  background: var(--primary);
   color: white;
+  font-size: 16px;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%)
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  z-index: 10;
 }
 .note span{
   padding: 10px;
@@ -61,9 +64,10 @@ export default {
   position: absolute;
   bottom: 0;
   right: 0;
+  border-radius: 20px;
   cursor: pointer;
 }
-@media screen and (max-width: 385px) {
+@media screen and (max-width: 550px) {
   .note{
     width: 90%;
   }

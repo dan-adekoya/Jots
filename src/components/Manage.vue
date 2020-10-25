@@ -27,6 +27,7 @@ export default {
 .manage{
     text-align: center;
     height: 92vh;
+    border-radius: 20px;
     color: var(--white);
 }
 .jotsWritten{
@@ -37,6 +38,7 @@ export default {
     overflow-y: scroll;
     padding: 0 30px;
     background: var(--secondary2);
+    border-radius: 20px;
 }
 .jotsWritten::-webkit-scrollbar{
   width: 6px;

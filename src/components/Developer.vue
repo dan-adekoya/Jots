@@ -65,6 +65,7 @@ data() {
     overflow-y: scroll;
     padding: 20px 30px;
     background: var(--secondary2);
+    border-radius: 20px;
 }
 .about::-webkit-scrollbar{
   width: 6px;

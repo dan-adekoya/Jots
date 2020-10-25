@@ -77,6 +77,8 @@ form input{
   outline: none;
   font-size: 20px;
   color: var(--white);
+  border-radius: 20px;
+
 }
 ::placeholder{
   color: var(--white);
@@ -92,6 +94,7 @@ form textarea{
   background: var(--secondary2);
   border: none;
   font-size: 20px;
+    border-radius: 20px;
 }
 .btn{
   display: flex;
@@ -99,10 +102,13 @@ form textarea{
   align-items: center;
 }
 .btn .mainBtn{
-  flex: 1
+  flex: 1;
+  border-radius: 20px;
+
 }
 .Btn{
   flex: 3;
+  border-radius: 20px;
 }
 .btn button, p{
   margin: 0 2%; 
@@ -112,6 +118,7 @@ form textarea{
   outline: none;
   color: var(--white);
   cursor: pointer;
+  border-radius: 20px;
 }
 .btn button:nth-child(1){
   background: #0DFF6E
