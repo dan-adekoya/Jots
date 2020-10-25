@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <Nav></Nav>
+    <Nav />
     <div class="router-view">
-      <router-view></router-view>
+      <router-view :notess="notes" />
     </div>
+    <h2 v-if="note" class="note">NOTE<br>Jots doesn't save any data being written into a database. This was just created for demo purposes only.<br>Enjoy the Demo ! <span @click="note = false">close</span> </h2>
   </div>
 </template>
 
@@ -11,9 +12,18 @@
 export default {
   data() {
     return {
- 
+      notes: [
+        {title: "Jots", note: 'Omooo'}
+      ],
+      note: true
     }
   },
+  methods: {
+    removeJot(not){
+        let noteIndex = this.notes.indexOf(not)
+        this.notes.splice(noteIndex, 1)
+    }
+  }
 }
 </script>
 
@@ -33,5 +43,29 @@ export default {
 .router-view{
   padding: 20px;
   width: 100%;
+}
+.note{
+  position: fixed;
+  width: 350px;
+  padding: 10px;
+  background: black;
+  color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+.note span{
+  padding: 10px;
+  background: green;
+  margin: 5px;  
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+}
+@media screen and (max-width: 385px) {
+  .note{
+    width: 90%;
+  }
 }
 </style>

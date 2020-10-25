@@ -2,53 +2,24 @@
     <div class="manage">
         <h1>Manage Jots</h1>
         <div class="jotsWritten">
-            <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
-             <div class="jot">
-                <h2>Title</h2> <img src="../assets/images/delete.svg" alt="">
-            </div>
+            <ul>
+                <li class="jot" v-for="(note, index) in notess" :key="index">{{note.title}} <button class="submit"></button></li>
+            </ul>
+    
         </div>
     </div>
 </template>
 
 <script>
 export default {
+    props: ['notess'],
     data(){
         return {
-
+            
         }
     },
+    method:{
+    }
 }
 </script>
 
@@ -77,12 +48,20 @@ export default {
     display: flex;
     justify-content: space-between;
     padding: 20px 20px;
+    list-style: none;
+    align-items: center;
     border-bottom: 1px solid var(--white);
 }
-.jotsWritten .jot  h2{
-    font-weight: 200;
+.jotsWritten .jot button{
+    padding: 10px 30px;
+    border: none;
+    font-size: 17px;
+    border-radius: 10px;
+    color: #FFFFFF;
+    background: #00f60091; 
+    outline: none;
 }
-.jotsWritten .jot img{
-    cursor: pointer;
+strong{
+    font-size: 15px;
 }
 </style>
