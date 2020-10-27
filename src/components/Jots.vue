@@ -10,8 +10,6 @@
       </div>
     </form>
     <h4 v-bind:class="{warn: warn}" class="awr">Input the fields</h4>
-    <h4 v-bind:class="{save: save}" class="swr">Check Manage to see saved jots</h4>
-    {{rem}}
 
     <div class="preview" v-bind:class="{open: open}">
       <img src="../assets/images/close.svg" alt="" class="close" @click="open =! open">
@@ -31,7 +29,6 @@ export default {
       note: '',
       warn: false,
       open: false,
-      save: false
     }
   },
   methods: {
@@ -39,12 +36,17 @@ export default {
       if(this.title == '' || this.note == ''){
         this.warn = true
       }
-      else{
-        this.notess.push({title: this.title, note: this.note})
-        this.title = ''
-        this.note = ''
-        this.save = true
-        this.warn = false
+      else{ 
+        setTimeout(() => {
+          this.notess.unshift({title: this.title, note: this.note})
+          this.title = ''
+          this.note = ''
+          this.save = true
+          this.save = true
+          this.warn = false
+          this.$router.push('/manage')
+        }, 1000);
+        
       }
 
     },
@@ -198,20 +200,7 @@ form textarea{
   pointer-events: none;
   font-weight: 100;
 }
-.swr{
-  opacity: 0;
-  color: var(--white);
-  background: #0DFF6E;
-  padding: 10px;
-  width: 200px;
-  position: absolute;
-  transition: all 300ms;
-  top: 8%;
-  right: 0%;
-  pointer-events: none;
-  font-weight: 100;
-}
-.awr.warn, .swr.save{
+.awr.save{
   opacity: 1;
 }
 @media screen and (max-width: 900px) {

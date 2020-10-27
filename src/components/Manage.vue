@@ -1,5 +1,7 @@
 <template>
     <div class="manage">
+    <h4 v-bind:class="{save: save}" class="swr">Refreshing</h4>
+
         <h1>Manage Jots</h1>
         <div class="jotsWritten">
             <ul>
@@ -14,6 +16,7 @@ export default {
     props: ['notess'],
     data(){
         return {
+            save: true
         }
     },
     method:{
@@ -66,5 +69,39 @@ export default {
 }
 strong{
     font-size: 15px;
+}
+.swr{
+  opacity: 0;
+  color: var(--white);
+  background: #0DFF6E;
+  padding: 10px;
+  width: 200px;
+  position: absolute;
+  transition: all 300ms;
+  top: 8%;
+  right: 0%;
+  pointer-events: none;
+  font-weight: 100;
+}
+.swr.save{
+  opacity: 1;
+  animation: fade 4s 0s 1 forwards ;
+}
+@keyframes fade{
+    0%{
+        opacity: 0
+    }
+    30%{
+        opacity: 1
+    }
+    60%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
 }
 </style>
