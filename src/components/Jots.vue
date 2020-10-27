@@ -11,6 +11,7 @@
     </form>
     <h4 v-bind:class="{warn: warn}" class="awr">Input the fields</h4>
     <h4 v-bind:class="{save: save}" class="swr">Check Manage to see saved jots</h4>
+    {{rem}}
 
     <div class="preview" v-bind:class="{open: open}">
       <img src="../assets/images/close.svg" alt="" class="close" @click="open =! open">

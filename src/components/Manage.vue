@@ -14,7 +14,6 @@ export default {
     props: ['notess'],
     data(){
         return {
-            
         }
     },
     method:{
@@ -23,6 +22,7 @@ export default {
 </script>
 
 <style scoped>
+
 .manage{
     text-align: center;
     height: 92vh;

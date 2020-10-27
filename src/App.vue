@@ -12,10 +12,8 @@
 export default {
   data() {
     return {
-      notes: [
-        {title: 'Jots', note: ''}
-      ],
-      note: true
+      notes: [],
+      note: true,
     }
   },
   methods: {
