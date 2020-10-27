@@ -9,7 +9,7 @@
         <p class="Btn" @click="disallow">Preview Note</p>
       </div>
     </form>
-    <h4 v-bind:class="{warn: warn}" class="awr">Input the fields</h4>
+    <h4 v-if="warn" class="awr">Input the fields</h4>
 
     <div class="preview" v-bind:class="{open: open}">
       <img src="../assets/images/close.svg" alt="" class="close" @click="open =! open">
@@ -188,7 +188,6 @@ form textarea{
   background: var(--secondary)
 }
 .awr{
-  opacity: 0;
   color: var(--white);
   background: rgb(255, 145, 145);
   padding: 10px;
@@ -199,9 +198,6 @@ form textarea{
   right: 0%;
   pointer-events: none;
   font-weight: 100;
-}
-.awr.save{
-  opacity: 1;
 }
 @media screen and (max-width: 900px) {
  .btn button, p{
