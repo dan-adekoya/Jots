@@ -5,7 +5,6 @@
             <ul>
                 <li class="jot" v-for="(note, index) in notess" :key="index">{{note.title}} <button class="submit"></button></li>
             </ul>
-    
         </div>
     </div>
 </template>
@@ -47,12 +46,14 @@ export default {
   background: var(--secondary)
 }
 .jotsWritten .jot{
+    text-align: left;
     display: flex;
     justify-content: space-between;
-    padding: 20px 20px;
-    list-style: none;
     align-items: center;
+    padding: 20px 0;
+    list-style: none;
     border-bottom: 1px solid var(--white);
+    overflow: hidden;
 }
 .jotsWritten .jot button{
     padding: 10px 30px;

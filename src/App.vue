@@ -13,7 +13,7 @@ export default {
   data() {
     return {
       notes: [
-        {title: "Jots", note: 'Omooo'}
+        {title: 'Jots', note: ''}
       ],
       note: true
     }
@@ -23,7 +23,20 @@ export default {
         let noteIndex = this.notes.indexOf(not)
         this.notes.splice(noteIndex, 1)
     }
-  }
+  },
+  mounted(){
+    if(localStorage.notes){
+      this.notes = JSON.parse(localStorage.notes)
+    }
+  },
+  watch: {
+    notes:{
+      handler(newNotes){
+        localStorage.notes = JSON.stringify(newNotes)
+      },
+      deep: true
+    }
+  },
 }
 </script>
 
