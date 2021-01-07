@@ -5,9 +5,15 @@
         <h1>Manage Jots</h1>
         <div class="jotsWritten">
             <ul>
-                <li class="jot" v-for="(note, index) in notess" :key="index">{{note.title}} <button class="submit"></button></li>
+                <li class="jot" v-for="(note, index) in notess" :key="index">{{note.title}} <button @click="openModal(note.title, note.note)" class="submit">preview</button></li>
             </ul>
         </div>
+        <div class="preview" v-bind:class="{open: open}">
+      <img src="../assets/images/close.svg" alt="" class="close" @click="open = false">
+        <h1>Preview</h1>
+        <h2>{{title}}</h2>
+        <p>{{note}}</p>
+    </div>
     </div>
 </template>
 
@@ -16,15 +22,78 @@ export default {
     props: ['notess'],
     data(){
         return {
-            save: true
+            save: true,
+            open: false,
+            title: '',
+            note: '',
         }
     },
-    method:{
+    methods:{
+        openModal(title, note){
+            this.open = true
+            this.title = title
+            this.note = note
+        }
     }
 }
 </script>
 
 <style scoped>
+
+/* PREVIEW */
+.preview{
+  position: fixed;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  color: var(--white);
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: all 300ms;
+  background: rgba(0, 0, 0, 0.616);
+  z-index: 2;
+}
+.preview.open{
+  visibility: visible;
+  opacity: 1;
+}
+.close{
+  position: absolute;
+  top: 20px;
+  width: 30px;
+  right: 20px;
+  cursor: pointer;
+}
+.preview h1{
+  transform: translateY(30px);
+  width: 200px;
+  margin: auto;
+}
+.preview h2{
+  width: 90%;
+  padding: 10px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background: #3A4774;
+}
+.preview p{
+  width: 90%;
+  height: 70vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin: 0 auto;
+  margin-top: 40px;
+  background: #3A4774;
+  padding: 10px;
+  cursor: auto;
+}
+.preview p::-webkit-scrollbar{
+  width: 6px;
+}
+.preview p::-webkit-scrollbar-thumb{
+  background: var(--secondary)
+}
 
 .manage{
     text-align: center;
@@ -59,12 +128,13 @@ export default {
     overflow: hidden;
 }
 .jotsWritten .jot button{
-    padding: 10px 30px;
+    padding: 10px 20px;
     border: none;
-    font-size: 17px;
+    font-size: 14px;
     border-radius: 10px;
     color: #FFFFFF;
     background: #00f60091; 
+    cursor: pointer;
     outline: none;
 }
 strong{
